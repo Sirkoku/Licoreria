@@ -36,6 +36,10 @@ function login(){
         if(usuario === "fausto crivelli" && intentos <=3){
             alert(`bienvenido al sistema Sr. ${usuario}`)
             identificar = false
+        }
+        if(usuario === "milton salazar" && intentos <=3){
+            alert (`Bienvenido tutor ${usuario}`)
+            identificar = false
         }else{
             alert ("no reconozco el usuario")
             intentos ++
@@ -50,3 +54,11 @@ function login(){
 }
 
 login ();
+
+function sumar(a,b) {
+    return a + b
+}
+function restar (a,b) {
+    return a - b 
+}
+const iva = 1.21
