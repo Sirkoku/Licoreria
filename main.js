@@ -11,12 +11,10 @@ function login(){
         if(usuario === "fausto crivelli" && intentos <=3){
             alert(`bienvenido al sistema Sr. ${usuario}`)
             identificar = false
-        }
-        if(usuario === "milton salazar" && intentos <=3){
+        } else if(usuario === "milton" && intentos <=3){
             alert (`Bienvenido tutor ${usuario}`)
             identificar = false
-        }
-        else{
+        } else {
             alert ("no reconozco el usuario")
             intentos ++
             if (intentos > 3){
@@ -24,17 +22,23 @@ function login(){
                 break
             }
         }
-        
-    }while (identificar)
-    
-}
+        } while (identificar)
+    }
 
-login ();
-
-function sumar(a,b) {
-    return a + b
-}
-function restar (a,b) {
-    return a - b 
-}
 const iva = 1.21
+
+function calcularIva(importe){
+    if(parseFloat (importe)){
+        let resultado = importe * iva
+        alert("el importe mas iva es: "+resultado)
+    }
+}
+
+
+function calcularPrecioFinal (){
+    let precioDelProducto = prompt("ingresa el importe total de la compra")
+    calcularIva(precioDelProducto)
+}
+
+login()
+calcularPrecioFinal()
