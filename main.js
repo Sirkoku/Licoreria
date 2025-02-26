@@ -8,12 +8,14 @@ function login(){
         if (usuario === null){
             break
         }
-        if(usuario === "fausto crivelli" && intentos <=3){
+        if(usuario === "fausto" && intentos <=3){
             alert(`bienvenido al sistema Sr. ${usuario}`)
             identificar = false
+            calcularPrecioFinal()
         } else if(usuario === "milton" && intentos <=3){
             alert (`Bienvenido tutor ${usuario}`)
             identificar = false
+            calcularPrecioFinal()
         } else {
             alert ("no reconozco el usuario")
             intentos ++
@@ -22,7 +24,7 @@ function login(){
                 break
             }
         }
-        } while (identificar)
+        } while (identificar) 
     }
 
 const iva = 1.21
@@ -30,7 +32,7 @@ const iva = 1.21
 function calcularIva(importe){
     if(parseFloat (importe)){
         let resultado = importe * iva
-        alert("el importe mas iva es: "+resultado)
+        alert("el importe mas iva es: "+ resultado)
     }
 }
 
@@ -40,5 +42,6 @@ function calcularPrecioFinal (){
     calcularIva(precioDelProducto)
 }
 
-login()
-calcularPrecioFinal()
+login();
+
+
