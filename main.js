@@ -45,12 +45,9 @@ const lista = [bebidas1 ,bebidas2 ,bebidas3 ,bebidas4 ,bebidas5 , bebidas6]
 function filtrodeproductos(){
     let productoUs = prompt("ingrese el producto que esta buscando").trim().toUpperCase()
     console.log("producto a buscar", productoUs)
-
-
-    let resultado = lista.filter((x) => {
-        console.log(x.nombre);  // Verifica qué está tomando como nombre en cada iteración.
-        return x.nombre && x.nombre.toUpperCase().includes(productoUs);
-    });
+    
+    let resultado = lista.filter((x) => x.nombre.toUpperCase().includes(productoUs)
+    );
      // Mostrar resultado
     if (resultado.length > 0) {
         console.table(resultado);  // Muestra el resultado en una tabla.
@@ -61,7 +58,7 @@ function filtrodeproductos(){
 }
 
 function addprod(){
-    let nombre = prompt("ingrese el nombre o tipo de bebida").trim()
+    let nombre = prompt("ingrese la bebida que desea agregar").trim()
     let precio = parseFloat(prompt("ingrese el valor del producto"))
     let stock = parseInt(prompt("ingrese el stock total"))
 
