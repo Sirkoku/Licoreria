@@ -42,7 +42,7 @@ const lista = [bebidas1 ,bebidas2 ,bebidas3 ,bebidas4 ,bebidas5 , bebidas6]
 
 
 
-function filtrodeproductos(){
+function filtrarproductos(){
     let productoUs = prompt("ingrese el producto que esta buscando").trim().toUpperCase()
     console.log("producto a buscar", productoUs)
     
@@ -57,7 +57,7 @@ function filtrodeproductos(){
 
 }
 
-function addprod(){
+function agregarprod(){
     let nombre = prompt("ingrese la bebida que desea agregar").trim()
     let precio = parseFloat(prompt("ingrese el valor del producto"))
     let stock = parseInt(prompt("ingrese el stock total"))
@@ -76,5 +76,5 @@ function addprod(){
 
 
 
-filtrodeproductos();
-addprod();
+filtrarproductos();
+agregarprod();
