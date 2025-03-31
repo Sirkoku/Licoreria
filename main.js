@@ -73,8 +73,29 @@ function agregarprod(){
     console.table(lista)
 
 }
-
-
-
 filtrarproductos();
 agregarprod();
+/*
+let bienvenida = document.getElementById("bienvenida")
+console.log(bienvenida.innerHTML)
+
+let titulo = document.getElementsByClassName("titulo")
+console.log(titulo[2].innerHTML)
+
+let texto = document.getElementsByTagName("p")
+console.log(texto.innerHTML)  */
+
+let bienvenida = document.getElementById("bienvenida")
+
+/*bienvenida.innerText =  "modifica solo el texto" */
+
+bienvenida.innerHTML = "<h1>Bienvenida modificada desde js</h1>"
+
+let referencias = document.createElement("p")
+
+referencias.innerHTML = "<p>referencias inyectadas desde JS </p>"
+
+document.body.appendChild(referencias)
+
+
+
