@@ -1,6 +1,6 @@
 const catalogo = [
 
-{id:1, nombre: "cordeo con piel de lobo",precio: 4500,stock: 25},
+{id:1, nombre: "cordero con piel de lobo",precio: 4500,stock: 25},
 {id:2, nombre: "Santa Julia Tinto",precio: 4000,stock:25},
 {id:3, nombre: "Santa Julia Blanco",precio: 4000,stock:25},
 {id:4, nombre: "tumpeter tinto",precio: 4500,stock:25},
@@ -23,7 +23,7 @@ const catalogo = [
 ];
 
 const catalogoLS = () => {
-    localStorage.setItem("catalogo", JSON.stringify(catalogo));
+    localStorage.setItem("catalogo", JSON.stringify(catalogo))
 }
 const cargarCatalogoLS= () =>{
     return JSON.parse(localStorage.getItem("catalogo")) || [];
