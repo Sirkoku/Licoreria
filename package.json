@@ -1,0 +1,23 @@
+{
+  "name": "proyjs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sirkoku/Licoreria.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sirkoku/Licoreria/issues"
+  },
+  "homepage": "https://github.com/Sirkoku/Licoreria#readme",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "sweetalert2": "^11.19.1"
+  }
+}

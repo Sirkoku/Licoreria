@@ -1,0 +1,20 @@
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de entorno o configuración (por si los usas en el futuro)
+.env
+
+# Archivos de caché o temporales
+*.log
+*.tmp
+
+# Carpeta de producción (si compilas algo o usas herramientas como Webpack)
+dist/
+build/
+
+# Archivos de editores de código
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
