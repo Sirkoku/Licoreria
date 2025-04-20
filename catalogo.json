@@ -5,31 +5,31 @@
     "nombre": "cordero con piel de lobo",
     "precio": 4500,
     "stock": 25,
-    "imagen": "img/cordero-con-piel-de-lobo.jpg"
+    "imagen": "./image/cordero-con-piel-de-lobo.jpg"
     },
     {"id":2,
     "nombre": "Santa Julia Tinto",
     "precio": 4000,
     "stock":25,
-    "imagen":"img/santa-julia-tinto.PNG"
+    "imagen":"./image/santa-julia-tinto.PNG"
     },
     {"id":3,
     "nombre": "Santa Julia Blanco",
     "precio": 4000,
     "stock":25,
-    "imagen":"img/santa-julia-blanco.PNG"
+    "imagen":"./image/santa-julia-blanco.PNG"
     },
     {"id":4,
     "nombre": "tumpeter tinto",
     "precio": 4500,
     "stock":25,
-    "imagen":"img/trumpeter-tinto.PNG"
+    "imagen":"./image/trumpeter-tinto.PNG"
     },
     {"id":5,
     "nombre": "Fernet branca 750ml",
     "precio":7000,
     "stock":40,
-    "imagen":"img/fernet-branca-750ml.PNG"
+    "imagen":"./image/fernet-branca-750ml.PNG"
     },
     {"id":6,
     "nombre": "Fernet Branca 1lts",
@@ -40,7 +40,7 @@
     "nombre": "Gin Bombay",
     "precio":15000,
     "stock":20,
-    "imagen":"img/gin-bombay.PNG"
+    "imagen":"./image/gin-bombay.PNG"
     },
     {"id":8,
     "nombre": "Cosecha Tardia blanco",
@@ -106,7 +106,7 @@
     "nombre": "Oveja Negra ",
     "precio":4300,
     "stock": 15,
-    "imagen":"img/oveja-negra.PNG" 
+    "imagen":"./image/oveja-negra.PNG" 
     }
     ]
     }
