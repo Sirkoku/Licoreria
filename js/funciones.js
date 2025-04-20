@@ -18,17 +18,18 @@ Swal.fire({
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 class Bebida {
-constructor(nombre, precio, stock) {
+constructor(nombre, precio, stock, imagen) {
     this.nombre = nombre;
     this.precio = precio;
     this.stock = stock;
+    this.imagen = imagen || "image/no-image.png";
 }
 }
 
 fetch("catalogo.json")
 .then(res => res.json())
 .then(data => {
-    lista = data.bebidas.map(b => new Bebida(b.nombre, b.precio, b.stock));
+    lista = data.bebidas.map(b => new Bebida(b.nombre, b.precio, b.stock, b.imagen));
     renderizarCatalogo();
 })
 .catch(err => console.error("Error al cargar catálogo:", err));
@@ -43,7 +44,7 @@ lista.forEach((bebida, index) => {
     const imagen = bebida.imagen ? bebida.imagen : "image/no-image.png";
     div.innerHTML = `
     <div class="card h-100 shadow-sm">
-        <img src="${bebida.imagen}" class="card-img-top" alt="${bebida.nombre}">
+        <img src="${imagen}" class="card-img-top" alt="${bebida.nombre}">
         <div class="card-body">
         <h5 class="card-title">${bebida.nombre}</h5>
         <p class="card-text">Precio: $${bebida.precio}</p>
@@ -117,14 +118,16 @@ Swal.fire({
     let nombre = document.getElementById("buscar").value.trim().toLowerCase();
     let coincidencias = lista.filter(b => b.nombre.toLowerCase().includes(nombre));
 
+    const contenedor = document.getElementById("bebidas-container");
+    contenedor.innerHTML = "";
+
+
     if (coincidencias.length === 0) {
         Swal.fire("Sin resultados en el catálogo");
         return;
     }
 
-    const contenedor = document.getElementById("bebidas-container");
-    contenedor.innerHTML = "";
-
+    
     coincidencias.forEach((bebida, index) => {
         const div = document.createElement("div");
         div.className = "col";
@@ -146,3 +149,5 @@ Swal.fire({
 
 document.getElementById("botonFiltro").addEventListener("click", filtrarProductos);
 document.getElementById("verCarrito").addEventListener("click", mostrarCarrito);
+
+
