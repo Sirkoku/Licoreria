@@ -82,10 +82,14 @@ if (carrito.length === 0) {
     Swal.fire("El carrito está vacío");
     return;
 }
+let total = 0;
+let contenido = carrito.map(item => {
+    let subtotal= item.precio * item.cantidad;
+    total += subtotal;
+    return `${item.nombre} x${item.cantidad} - $${item.precio * item.cantidad}`
+}).join("<br>");
 
-let contenido = carrito.map(item =>
-    `${item.nombre} x${item.cantidad} - $${item.precio * item.cantidad}`
-).join("<br>");
+contenido += `<hr><strong>Total: $${total}</strong>`;
 
 Swal.fire({
     title: "Carrito de Compras",
