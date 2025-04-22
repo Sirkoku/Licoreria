@@ -92,31 +92,47 @@ localStorage.setItem("carrito", JSON.stringify(carrito));
 Swal.fire(`${producto.nombre} agregado al carrito`);
 }
 
-function mostrarCarrito() {
-if (carrito.length === 0) {
-    Swal.fire("El carrito está vacío");
-    return;
+function quitarDelCarrito(nombre) {
+    carrito = carrito.filter(item => item.nombre !== nombre);
+    localStorage.setItem("carrito", JSON.stringify(carrito)); // para que se guarde actualizado
+    renderizarCarrito(); // Vuelve a mostrar el carrito actualizado
 }
-let total = 0;
-let contenido = carrito.map(item => {
-    let subtotal= item.precio * item.cantidad;
-    total += subtotal;
-    return `${item.nombre} x${item.cantidad} - $${item.precio * item.cantidad}`
-}).join("<br>");
 
-contenido += `<hr><strong>Total: $${total}</strong>`;
-
-Swal.fire({
-    title: "Carrito de Compras",
-    html: contenido,
-    showCancelButton: true,
-    confirmButtonText: "Finalizar Compra",
-    cancelButtonText: "Seguir comprando"
-}).then((result) => {
-    if (result.isConfirmed) {
-    finalizarCompra();
+  // Evento para quitar (podés hacer delegación también si lo necesitás)
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('btn-quitar')) {
+    const nombre = e.target.dataset.nombre;
+    quitarDelCarrito(nombre);
     }
 });
+
+function renderizarCarrito() {
+    const contenedor = document.getElementById("carrito-container");
+    contenedor.innerHTML = "";
+
+    carrito.forEach(item => {
+    const div = document.createElement("div");
+    div.className = "carrito-item";
+    div.innerHTML = `
+        <p>${item.nombre} x${item.cantidad} - $${item.precio * item.cantidad}
+        <button class="btn-quitar btn btn-danger btn-sm" data-nombre="${item.nombre}">Quitar</button></p>
+    `;
+    contenedor.appendChild(div);
+    });
+}
+function mostrarCarrito() {
+    if (carrito.length === 0) {
+    Swal.fire("El carrito está vacío");
+    return;
+    }
+
+    renderizarCarrito(); // muestra el carrito en el contenedor normal
+
+    Swal.fire({
+    title: "Carrito cargado",
+    html: `<p>Revisá tu carrito debajo de los productos 👇</p>`,
+    icon: "info"
+    });
 }
 
 function finalizarCompra() {

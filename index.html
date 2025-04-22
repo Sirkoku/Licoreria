@@ -12,9 +12,26 @@
 </head>
 
 <body>
-        <header style="display: flex; align-items: right; padding: 15px; background-color: goldenrod;">
+        <header style="display: flex; align-items: right;justify-content: space-between ;padding: 15px; background-color: goldenrod;"> 
+            <div>
             <img src="icon/Icono.JPG" alt="Logo de la tienda" style="height: 150px; margin-right: 15px; align-items: center;">
             <h1 style="font-size: 24px; margin: auto;">La taberna de Baco</h1>
+        </div>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="#">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                <a class="nav-link" href="nosotros.html">Nosotros</a>
+                <a class="nav-link" href="contacto.html">Contacto</a>
+                
+                </div>
+            </div>
+            </div>
+        </nav>
         </header>
 
 
@@ -33,6 +50,10 @@
 </div>
 
 
+
+<div id="carrito-container"></div>
+
+<button class="btn-quitar" data-id="3">Quitar</button>
 
     <script src="js/funciones.js"></script>
     
