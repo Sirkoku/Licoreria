@@ -126,19 +126,26 @@ function mostrarCarrito() {
     return;
     }
 
-    renderizarCarrito(); // muestra el carrito en el contenedor normal
+    renderizarCarrito();
 
+    
     Swal.fire({
-    title: "Carrito cargado",
-    html: `<p>Revisá tu carrito debajo de los productos 👇</p>`,
-    icon: "info"
+    title: "¿Querés finalizar tu compra?",
+    icon: "question",
+    showCancelButton: true,
+    confirmButtonText: "Sí, finalizar",
+    cancelButtonText: "No, seguir viendo"
+    }).then((result) => {
+    if (result.isConfirmed) {
+        finalizarCompra();
+    }
     });
 }
-
 function finalizarCompra() {
-carrito = [];
-localStorage.removeItem("carrito");
-Swal.fire("¡Gracias por tu compra!", "Tu pedido ha sido procesado", "success");
+    carrito = [];
+    localStorage.removeItem("carrito");
+    renderizarCarrito(); // opcional, si querés limpiar la vista
+    Swal.fire("¡Gracias por tu compra!", "Tu pedido ha sido procesado", "success");
 }
 
 function filtrarProductos() {
