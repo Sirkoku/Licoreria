@@ -1,3 +1,7 @@
+function validarEdad(){
+    const edadGuardada = localStorage.getItem("edadPermitida")
+if(!edadGuardada){
+
 
 Swal.fire({
     title: "How old are you?",
@@ -5,16 +9,27 @@ Swal.fire({
     input: "range",
     inputLabel: "Your age",
     inputAttributes: {
-    min: "18",
+    min: "13",
     max: "100",
     step: "1"
     },
-    inputValue: 25
+    inputValue: 25,
+    confirmButtonText: "continuar"
+}).then(result => {
+    if(result.value  >= 18){
+        localStorage.setItem("edadPermitida","true");
+    }else{
+        Swal.fire("acceso restringido","ventas exclusivas a mayores de 18","error")
+        .then(() => {
+            // Bloqueo del contenido o redirección
+            document.body.innerHTML = "<h1 style='text-align:center; margin-top:50px;'>🚫 Acceso denegado</h1>";
+        });
+}
 });
+}
+}
 
-
-
-        let lista = [];
+let lista = [];
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 class Bebida {
@@ -160,4 +175,6 @@ document.getElementById("volverCatalogo").addEventListener("click", () => {
 document.getElementById("botonFiltro").addEventListener("click", filtrarProductos);
 document.getElementById("verCarrito").addEventListener("click", mostrarCarrito);
 
-
+window.addEventListener("DOMContentLoaded", () => {
+    validarEdad();
+});
