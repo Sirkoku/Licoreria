@@ -35,7 +35,7 @@
     "nombre": "Fernet Branca 1lts",
     "precio":12000,
     "stock":30,
-    "imagen":""
+    "imagen":"image/fernet-branca-1lt.PNG"
     },
     {"id":7,
     "nombre": "Gin Bombay",
@@ -47,73 +47,73 @@
     "nombre": "Cosecha Tardia blanco",
     "precio":3000,
     "stock":35,
-    "imagen":""
+    "imagen":"image/cosecha-tardia-blanco.PNG"
     },
     {"id":9,
     "nombre": "Cosecha Tardia tinto",
     "precio":3000,
     "stock":35,
-    "imagen":""
+    "imagen":"image/cosecha-tardia-tinto.PNG"
     },
     {"id":10,
     "nombre": "Vodka Sky",
     "precio":10000,
     "stock":25,
-    "imagen":""
+    "imagen":"image/vodka-sky.PNG"
     },
     {"id":11,
     "nombre": "Vodka Absolute",
     "precio":35000,
     "stock":10,
-    "imagen":""
+    "imagen":"image/vodka-absolut.PNG"
     },
     {"id":12,
     "nombre": "Vodka Smirnoff",
     "precio":10000,
     "stock":10,
-    "imagen":""
+    "imagen":"image/vodka-smirnoff.PNG"
     },
     {"id":13,
     "nombre": "Campari",
     "precio":9000,
     "stock":10,
-    "imagen":""
+    "imagen":"image/campari.PNG"
     },
     {"id":14,
     "nombre": "Gancia Americano",
     "precio":8000,
     "stock":25,
-    "imagen":""
+    "imagen":"image/gancia-americano-950ml.PNG"
     },
     {"id":15,
     "nombre": "jagermeister",
     "precio":25000,
     "stock":10,
-    "imagen":""
+    "imagen":"image/jagermeister.PNG"
     },
     {"id":16,
     "nombre": "Johnnie Walker Red Label 750ml",
     "precio":24000,
     "stock":5,
-    "imagen":""
+    "imagen":"image/johnnieWalker-red-label-750ml.PNG"
     },
     {"id":17,
-    "nombre": "Johnnie Walker Black Label 750ml",
+    "nombre": "Johnnie Walker Black Label 1lt",
     "precio": 34000,
     "stock":5,
-    "imagen":""
+    "imagen":"image/johnnieWalker-black-label-1lt.PNG"
     },
     {"id":18,
-    "nombre": "Johnnie Walker Blue Label 750cc",
+    "nombre": "Johnnie Walker Blue Label 1lt",
     "precio":39000,
     "stock":3,
-    "imagen":""
+    "imagen":"image/johnnieWalker-blue-label-1l.PNG"
     },
     {"id":19,
-    "nombre": "Johnnie Walker Red Label 1L",
+    "nombre": "Johnnie Walker Red Label 1Lt",
     "precio":28000,
     "stock":5,
-    "imagen":""
+    "imagen":"image/johnnieWalker-red-label-1lt.PNG"
     },
     {"id":20,
     "nombre": "Oveja Negra ",

@@ -147,9 +147,15 @@ Swal.fire({
         `;
         contenedor.appendChild(div);
     });
+    document.getElementById("volverCatalogo").style.display = "inline-block";
     }
 });
 }
+document.getElementById("volverCatalogo").addEventListener("click", () => {
+    renderizarCatalogo();
+    document.getElementById("volverCatalogo").style.display = "none"; // Ocultar de nuevo
+});
+
 
 document.getElementById("botonFiltro").addEventListener("click", filtrarProductos);
 document.getElementById("verCarrito").addEventListener("click", mostrarCarrito);
