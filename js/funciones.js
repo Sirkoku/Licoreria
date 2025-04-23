@@ -1,5 +1,5 @@
 function validarEdad(){
-    const edadGuardada = localStorage.getItem("edadPermitida")
+    const edadGuardada = sessionStorage.getItem("edadPermitida")
 if(!edadGuardada){
 
 
@@ -17,7 +17,7 @@ Swal.fire({
     confirmButtonText: "continuar"
 }).then(result => {
     if(result.value  >= 18){
-        localStorage.setItem("edadPermitida","true");
+        sessionStorage.setItem("edadPermitida","true");
     }else{
         Swal.fire("acceso restringido","ventas exclusivas a mayores de 18","error")
         .then(() => {
@@ -126,7 +126,7 @@ function mostrarCarrito() {
     return;
     }
 
-    renderizarCarrito();
+    renderizarCarrito(); // muestra carrito en el DOM
 
     
     Swal.fire({
@@ -140,12 +140,6 @@ function mostrarCarrito() {
         finalizarCompra();
     }
     });
-}
-function finalizarCompra() {
-    carrito = [];
-    localStorage.removeItem("carrito");
-    renderizarCarrito(); // opcional, si querés limpiar la vista
-    Swal.fire("¡Gracias por tu compra!", "Tu pedido ha sido procesado", "success");
 }
 
 function filtrarProductos() {
@@ -201,3 +195,5 @@ document.getElementById("verCarrito").addEventListener("click", mostrarCarrito);
 window.addEventListener("DOMContentLoaded", () => {
     validarEdad();
 });
+
+localStorage.removeItem("edadPermitida");
