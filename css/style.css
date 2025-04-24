@@ -11,9 +11,9 @@ body {
     transform: scale(1.03);
 }
 .card-img-top {
-    width: 100%;       /* Hace que la imagen ocupe el 100% del contenedor */
-    height: 300px;      /* Mantiene la relación de aspecto */
-    object-fit: contain; /* Asegura que la imagen cubra el área sin distorsionarse */
+    width: 100%;      
+    height: 300px;      
+    object-fit: contain; 
 }
 
 

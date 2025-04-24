@@ -1,0 +1,26 @@
+body {
+    background-color: rgba(0, 0, 0, 0.925);
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Georgia', serif;
+}
+
+.card {
+    background-color: rgb(228, 184, 126);
+    border: none;
+    box-shadow: 0 0 15px rgba(148, 98, 4, 0.39);
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+    opacity: 1;
+    }
+}

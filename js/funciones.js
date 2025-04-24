@@ -98,7 +98,7 @@ function quitarDelCarrito(nombre) {
     renderizarCarrito(); // Vuelve a mostrar el carrito actualizado
 }
 
-  // Evento para quitar (podés hacer delegación también si lo necesitás)
+  // Evento para quitar 
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('btn-quitar')) {
     const nombre = e.target.dataset.nombre;
@@ -120,13 +120,27 @@ function renderizarCarrito() {
     contenedor.appendChild(div);
     });
 }
+
+function finalizarCompra() {
+    carrito.length = 0;
+    renderizarCarrito();
+
+    Swal.fire({
+        title: "¡Compra finalizada con éxito!",
+        text: "Gracias por tu compra.",
+        icon: "success",
+        confirmButtonText: "OK"
+    });
+}
+
+
 function mostrarCarrito() {
     if (carrito.length === 0) {
     Swal.fire("El carrito está vacío");
     return;
     }
 
-    renderizarCarrito(); // muestra carrito en el DOM
+    renderizarCarrito();
 
     
     Swal.fire({
@@ -169,6 +183,7 @@ Swal.fire({
         div.className = "col";
         div.innerHTML = `
         <div class="card h-100 shadow-sm">
+            <img src="${bebida.imagen}" class="card-img-top" alt="${bebida.nombre}">
             <div class="card-body">
             <h5 class="card-title">${bebida.nombre}</h5>
             <p class="card-text">Precio: $${bebida.precio}</p>
@@ -195,5 +210,3 @@ document.getElementById("verCarrito").addEventListener("click", mostrarCarrito);
 window.addEventListener("DOMContentLoaded", () => {
     validarEdad();
 });
-
-localStorage.removeItem("edadPermitida");
