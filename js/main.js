@@ -14,10 +14,10 @@ function escribirTexto() {
 
 window.onload = () => {
   
-  if (sessionStorage.getItem("introVisto") === "true") {
+  if (localStorage.getItem("introVisto") === "true") {
     window.location.href = "index.html";
   } else {
     escribirTexto();
-    sessionStorage.setItem("introVisto", "true");
+    localStorage.setItem("introVisto", "true");
   }
 };
