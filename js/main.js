@@ -9,11 +9,11 @@ function escribirTexto() {
     textoElemento.innerHTML += textoIntro[i];
     i++;
     setTimeout(escribirTexto, speed);
-  }
-}else{
-  setTimeout(() =>{
-    window.location.href= "index.html";
-  },1000);
+  }else{
+    setTimeout(() =>{
+      window.location.href= "index.html";
+    },1000);
+}
 }
 
 window.addEventListener('DOMContentLoaded',() =>{
