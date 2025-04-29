@@ -12,12 +12,11 @@ function escribirTexto() {
   }
 }
 
-window.onload = () => {
-  
+window.addEventListener('DOMContentLoaded',() =>{
   if (localStorage.getItem("introVisto") === "true") {
     window.location.href = "index.html";
   } else {
     escribirTexto();
     localStorage.setItem("introVisto", "true");
   }
-};
+});
