@@ -1,7 +1,7 @@
 
 const textoIntro = "Inspirada en Baco, el dios del vino y la celebración, nuestra empresa busca ofrecer calidad para los amantes del buen beber.";
 let i = 0;
-const speed = 20;
+const speed = 30;
 const textoElemento = document.getElementById("introText");
 
 function escribirTexto() {
@@ -13,8 +13,9 @@ function escribirTexto() {
         setTimeout(escribir,speed);
       }else{
         setTimeout(()=>{
+          console.log("texto completado")
           resolve();
-        },1000);
+        },6000);
       }
     }
     escribir();
@@ -28,8 +29,8 @@ function iniciar(){
       window.location.href= "index.html";
     });
   }else{
-    window.location.href= "index.html";
+  //  window.location.href= "index.html";  //
   }
 }
 
-iniciar();
+document.addEventListener("DOMContentLoaded", iniciar);
