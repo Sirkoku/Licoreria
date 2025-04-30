@@ -5,22 +5,31 @@ const speed = 20;
 const textoElemento = document.getElementById("introText");
 
 function escribirTexto() {
-  if (i < textoIntro.length) {
-    textoElemento.innerHTML += textoIntro[i];
-    i++;
-    setTimeout(escribirTexto, speed);
-  }else{
-    setTimeout(() =>{
-      window.location.href= "index.html";
-    },1000);
-}
+  return new Promise((resolve =>{
+    function escribir(){
+      if (i< textoIntro.length){
+        textoElemento.textContent += textoIntro[i];
+        i++;
+        setTimeout(escribir,speed);
+      }else{
+        setTimeout(()=>{
+          resolve();
+        },1000);
+      }
+    }
+    escribir();
+  }))
 }
 
-window.addEventListener('DOMContentLoaded',() =>{
-  if (localStorage.getItem("introVisto") === "true") {
-    window.location.href = "index.html";
-  } else {
-    escribirTexto();
-    localStorage.setItem("introVisto", "true");
+function iniciar(){
+  if (!localStorage.getItem("introVisto")){
+    escribirTexto().then(()=>{
+      localStorage.setItem("introVisto","true");
+      window.location.href= "index.html";
+    });
+  }else{
+    window.location.href= "index.html";
   }
-});
+}
+
+iniciar();
