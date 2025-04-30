@@ -26,7 +26,7 @@ function iniciar(){
   if (!localStorage.getItem("introVisto")){
     escribirTexto().then(()=>{
       localStorage.setItem("introVisto","true");
-      window.location.href= "index.html";
+      window.location.href= "./index.html";
     });
   }else{
   //  window.location.href= "index.html";  //
